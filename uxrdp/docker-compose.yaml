@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+  xrdp:
+    image: danielguerra/ubuntu-xrdp:latest
+    hostname: Dans
+    ports:
+      - "4222:22"
+      - "3389:3389"
