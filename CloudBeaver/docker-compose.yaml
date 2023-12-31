@@ -20,4 +20,4 @@ services:
     networks:
       - cloudbeaver-net
     volumes:
-      - cloudbeaver-data:/opt/cloudbeaver/workspace
+      - cloudbeaver-data:/opt/cloudbeaver/workspace 
