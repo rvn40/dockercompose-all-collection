@@ -1,0 +1,23 @@
+version: '3.7'
+
+networks:
+  cloudbeaver-net:  # [project-name]-net
+    name: cloudbeaver-net # [project-name]-net
+    driver: bridge
+
+volumes:
+  cloudbeaver-data:
+    name: techinet-data
+    external: true
+
+services:
+  cloudbeaver:
+    image: dbeaver/cloudbeaver:23.3.1
+    hostname: cloudbeaver
+    restart: "unless-stopped"
+    ports:
+      - "8080:8978"
+    networks:
+      - cloudbeaver-net
+    volumes:
+      - cloudbeaver-data:/opt/cloudbeaver/workspace
